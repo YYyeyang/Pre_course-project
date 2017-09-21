@@ -1,20 +1,29 @@
 import csv
+import string
 
-dictionary={}
+
 
 with open('Registered_unemployment_processed.csv', mode='r') as infile:
     reader = csv.reader(infile)
-    for row in reader:
-        if row[0].split(";")=="2016":
-            key=(row[0].split(";"))[1]
-            value=(row[0].split(";"))[2]
-            #strplace= String replace the non-digit into empty
-            dictionary[key]=value
+    unemployment_years = {}
+    for year in [2013,2014,2015,2016,2017]:
+        year_dic = {}
+        for row in reader:
+            if str(year) in row[0].split(";"):
+                key = (row[0].split(";"))[1]
+                value = (row[0].split(";"))[2]
+                # strreplace= String replace the non-digit into empty
+                value = value.replace("/", "")
+                value = value.replace("'", "")
+                value = value.replace(" ", "")
+                # add the second element of the list as a key and the third as value to the list
+                year_dic[key] = value
 
+    unemployment_years[year] = year_dic
 
+# if row(0) = year
 
-        print(newlist)
+# for year in years
 
-        #Split with ;
-        #check if its starts with 2016
-        #add the second element of the list as a key and the third as value to the list
+# if year is 2016, write to the 2016 dic
+# if the year dic is in range 2013-2016, then write to unemployment dic
