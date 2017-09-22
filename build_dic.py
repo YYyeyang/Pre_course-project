@@ -1,3 +1,4 @@
+def build_dic():
 
 import csv
 import string
