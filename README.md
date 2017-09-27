@@ -18,31 +18,38 @@
   
 		Non-matchable variables:
 	
-			d. No. of population living alone
+			d. Age
 			e. Nationality
-			f. Educational level
-			g. Age
   
 
 3.	Processing
 
 		a. Calculate whether younger neighbourhood has higher employment, and if it changes over the year
-		   Input need: a/b/c/g
+		   Input needed: a/b/c/d
 
 		b. Calculate which nationality has higher employment, and if it changes over the year
-		   Input need: a/b/c/e
-
-		c. Calculate whether higher educational level has higher employment, and if it changes over the year
-		   Input need: a/b/c/f
-		
-		d. Calculate whether higher single house hold neighbourhood has higher employment, and if it changes over the year
-		   Input need: a/b/c/d
+		   Input needed: a/b/c/e
+	
 
 
 4.	Output
 
 		a. Result of the correlation in number and in graphs
-		b. Maybe create a heatmap??
+		b. Maybe create a heatmap?
 
 
-5.	Status
+5.	Current status
+
+		a. Finished:
+			1. Pre-processed my CSV files, so I could easliy access the data I need
+			2. Built a funtion that creates a dictionary with years and districts
+			3. Got dictionary 1: Average age in each distrcit in each year
+			4. dictionary 2: Average unemployment in each distrcit in each year
+			
+		b. To be done:
+			1. Convert my dictionaries into a list
+			2. Use numpy to calculate the correlation between age and unemployment
+			3. Plot my correlations
+			4. Decide what to do with the nationality data? Take the max nationality to represent one district?
+			5. Heatmap maybe??
+		
