@@ -1,7 +1,6 @@
-def build (csvfilename, dictionary):
+import csv
 
-    import csv
-    import string
+def build (csvfilename):
 
     dictionary = {}
     years = [2013, 2014, 2015, 2016]
@@ -23,3 +22,15 @@ def build (csvfilename, dictionary):
             dictionary[year] = year_dic
 
     return dictionary
+
+
+def convert (dict, year):
+
+    lis = []
+    for year_dic in dict:
+        if year_dic == year:
+            for district in dict[year]:
+                lis.append(dict[year][district])
+
+    num_list = [float(i) for i in lis]
+    return num_list
